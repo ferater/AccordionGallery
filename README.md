@@ -1,5 +1,5 @@
 
-![alt text](https://raw.githubusercontent.com/ferater/js-practice/main/Acordion%20Gallery/img/ss.gif?raw=true)
+![alt text](https://raw.githubusercontent.com/ferater/AccordionGalley/main/img/ss.gif?raw=true)
 
 # figma to html
 
