@@ -60,6 +60,7 @@ body::after {
     position: absolute;
     object-fit: cover;
     background-color: var(--white);
+    cursor: pointer;
 }
 
 #app {

@@ -1,10 +1,10 @@
-import {firstActive, data} from "./data.js";
+import { firstActive, data } from "./data.js";
 class accordion {
   constructor(accordionsParent, firstActive, data) {
     this.accordionsParent = accordionsParent;
     this.firstActive = firstActive;
     this.data = data;
-    this.html = "";
+    this.html = null;
   }
 
   init() {
@@ -19,7 +19,7 @@ class accordion {
     });
   }
 
-  removeActive = function (arr, obj) {
+  removeActive = (arr, obj) => {
     arr.forEach((item) => {
       if (item !== obj) {
         item.classList.remove("active");
@@ -27,15 +27,15 @@ class accordion {
     });
   };
 
-  htmlMap() {
+  htmlMap = () => {
     return (this.html = this.data
       .map((accordion) => {
         return `
       <div class="person">
-      <div class="pic rounded p-rel">
-      <img src="${accordion.pic}" alt="${accordion.name}" class="avatar" />
-          <div class="social p-abs rounded d-grid">
-          <span class="iconify icon-social x-g-center y-g-center"
+        <div class="pic rounded p-rel">
+          <img src="${accordion.pic}" alt="${accordion.name}" class="avatar" />
+            <div class="social p-abs rounded d-grid">
+            <span class="iconify icon-social x-g-center y-g-center"
           data-icon="${accordion.social}"
         ></span>
           </div>
@@ -48,10 +48,10 @@ class accordion {
           </div>`;
       })
       .join(""));
-  }
+  };
 }
 
 const accordionsParent = document.querySelector(".accordion");
 
 const app = new accordion(accordionsParent, firstActive, data);
-window.onload = app.init();
+this.onload = app.init();
