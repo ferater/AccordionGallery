@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap');
-@import './reponsive.css';
 @import './helper.css';
+
+html{
+    font-size: 1vw;
+}
 
 :root {
     --avatar-size: 18rem;
@@ -25,7 +28,7 @@ body::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('../img/circles.svg') no-repeat 100% 100% / 40rem;
+    background: url('../img/circles.svg') no-repeat 100% 100% / 39rem;
     z-index: -1;
 }
 
@@ -112,11 +115,11 @@ header .star .icon-star {
     margin-bottom: 1.5rem;
 }
 
-main .accordion{
+main .accordion-container{
     overflow: hidden;
 }
 
-main .accordion .person {
+main .accordion-container .accordion {
     width: 18rem;
     display: flex;
     border-radius: 20rem;
@@ -124,7 +127,7 @@ main .accordion .person {
     transition: all .3s ease-in-out;
 }
 
-main .accordion .person.active {
+main .accordion-container .accordion.active {
     width: 55rem;
     height: 18rem;
     display: flex;
@@ -132,12 +135,12 @@ main .accordion .person.active {
     background-color: var(--white);
 }
 
-main .accordion .person .pic {
+main .accordion-container .accordion .pic {
     width: var(--avatar-size);
     height: var(--avatar-size);
 }
 
-main .accordion .person .pic .social {
+main .accordion-container .accordion .pic .social {
     width: 6.2rem;
     height: 6.2rem;
     background-color: var(--white);
@@ -146,28 +149,28 @@ main .accordion .person .pic .social {
     box-shadow: 0 0 .3rem var(--black);
 }
 
-main .accordion .person .pic .social .icon-social{
+main .accordion-container .accordion .pic .social .icon-social{
     font-size: 3.5rem;
 }
 
-main .accordion .person .detail {
+main .accordion-container .accordion .detail {
     width: 0;
     height: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-main .accordion .person.active .detail {
+main .accordion-container .accordion.active .detail {
     width: 25rem;
     height: 16rem;
     padding: 2.5rem 0 0 2.25rem;
     overflow: hidden;
 }
 
-main .accordion .person .detail:not(.person.active .detail) {
+main .accordion-container .accordion .detail:not(.accordion.active .detail) {
     display: none;
 }
 
-main .accordion .person .detail h3 {
+main .accordion-container .accordion .detail h3 {
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 105%;
@@ -175,14 +178,14 @@ main .accordion .person .detail h3 {
     color: #333333;
 }
 
-main .accordion .person .detail span.sub-header {
+main .accordion-container .accordion .detail span.sub-header {
     font-weight: 400;
     font-size: .85rem;
     line-height: 150%;
     color: #686868;
 }
 
-main .accordion .person .detail p {
+main .accordion-container .accordion .detail p {
     margin-top: 1.3rem;
     font-weight: 400;
     font-size: 1.2rem;

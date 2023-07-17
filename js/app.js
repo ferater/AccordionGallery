@@ -1,23 +1,26 @@
 import { firstActive, data } from "./data.js";
-class accordion {
-  constructor(accordionsParent, firstActive, data) {
-    this.accordionsParent = accordionsParent;
+class Accordion {
+  constructor(accordionContainer, firstActive, data) {
+    this.accordionContainer = accordionContainer;
     this.firstActive = firstActive;
     this.data = data;
-    this.html = null;
   }
 
   init() {
-    this.accordionsParent.insertAdjacentHTML("afterbegin", this.htmlMap());
-    let accArray = this.accordionsParent.querySelectorAll(".person");
-    accArray.forEach((item, index, arr) => {
+    this.populateAccordions();
+    this.expandAccordion();
+  }
+
+  expandAccordion = () => {
+    let accordions = this.accordionContainer.querySelectorAll(".accordion");
+    accordions.forEach((item, index) => {
       index == this.firstActive ? item.classList.add("active") : null;
-      item.addEventListener("click", (e) => {
-        this.removeActive(accArray, item);
+      item.addEventListener("click", () => {
+        this.removeActive(accordions, item);
         item.classList.toggle("active");
       });
     });
-  }
+  };
 
   removeActive = (arr, obj) => {
     arr.forEach((item) => {
@@ -27,11 +30,11 @@ class accordion {
     });
   };
 
-  htmlMap = () => {
-    return (this.html = this.data
+  populateAccordions = () => {
+    accordionContainer.innerHTML = this.data
       .map((accordion) => {
         return `
-      <div class="person">
+      <div class="accordion">
         <div class="pic rounded p-rel">
           <img src="${accordion.pic}" alt="${accordion.name}" class="avatar" />
             <div class="social p-abs rounded d-grid">
@@ -47,11 +50,11 @@ class accordion {
           </div>
           </div>`;
       })
-      .join(""));
+      .join("");
   };
 }
 
-const accordionsParent = document.querySelector(".accordion");
+const accordionContainer = document.querySelector(".accordion-container");
 
-const app = new accordion(accordionsParent, firstActive, data);
-this.onload = app.init();
+const app = new Accordion(accordionContainer, firstActive, data);
+window.onload = app.init();
