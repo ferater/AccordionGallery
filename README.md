@@ -1,9 +1,14 @@
+# Accordion Gallery
 
-![alt text](https://raw.githubusercontent.com/ferater/AccordionGalley/main/img/ss.gif?raw=true)
+# Live Demo
+[live demo](https://ferater.github.io/AccordionGallery/)
 
-# figma to html
-
+# Original Figma
 [original figma](https://www.figma.com/community/file/1164900293490788881)
+
+# ScreenShots
+![alt text](https://raw.githubusercontent.com/ferater/AccordionGallery/main/img/ss.gif?raw=true)
+
 
 ## Setup
 ```
