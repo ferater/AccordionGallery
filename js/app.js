@@ -12,12 +12,14 @@ class Accordion {
   }
 
   expandAccordion = () => {
-    let accordions = this.accordionContainer.querySelectorAll(".accordion");
-    accordions.forEach((item, index) => {
-      index == this.firstActive ? item.classList.add("active") : null;
-      item.addEventListener("click", () => {
-        this.removeActive(accordions, item);
-        item.classList.toggle("active");
+    let accordions = document.querySelectorAll(".accordion .pic");
+    accordions.forEach((accordion, index) => {
+      index == this.firstActive
+        ? accordion.parentElement.classList.add("active")
+        : null;
+      accordion.addEventListener("click", () => {
+        this.removeActive(accordions, accordion);
+        accordion.parentElement.classList.toggle("active");
       });
     });
   };
@@ -25,7 +27,7 @@ class Accordion {
   removeActive = (arr, obj) => {
     arr.forEach((item) => {
       if (item !== obj) {
-        item.classList.remove("active");
+        item.parentElement.classList.remove("active");
       }
     });
   };
